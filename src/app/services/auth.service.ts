@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '@environments/environment';
 import { switchMap, tap } from 'rxjs/operators';
 import { TokenService } from '@services/token.service';
+import { MeService } from '@services/me.service';
 import { ResponseLogin } from '@models/auth.model';
 import { User } from '@models/user.model';
 import { BehaviorSubject } from 'rxjs';
-import { checkToken } from '@interceptors/token.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,8 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private meService: MeService,
   ) { }
 
   getDataUser() {
@@ -77,7 +78,7 @@ export class AuthService {
   }
 
   getProfile() {
-    return this.http.get<User>(`${this.apiUrl}/api/v1/auth/profile`, { context: checkToken() })
+    return this.meService.getProfile()
     .pipe(
       tap(user => {
         this.user$.next(user);
