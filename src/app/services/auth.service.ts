@@ -78,7 +78,7 @@ export class AuthService {
   }
 
   getProfile() {
-    return this.meService.getProfile()
+    return this.meService.getMeProfile()
     .pipe(
       tap(user => {
         this.user$.next(user);
@@ -88,5 +88,6 @@ export class AuthService {
 
   logout() {
     this.tokenService.removeToken();
+    this.tokenService.removeRefreshToken();
   }
 }
