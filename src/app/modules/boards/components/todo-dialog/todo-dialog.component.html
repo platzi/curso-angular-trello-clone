@@ -15,10 +15,6 @@
       <div class="flex flex-col">
         <h3 class="text-lg font-semibold text-gray-800">Description</h3>
         <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, hic? Adipisci soluta cum odio, beatae ratione magni nobis, optio similique rerum minus excepturi sed vel, id voluptatibus repellendus numquam quod.</p>
-        <div class="flex space-x-2">
-          <button type="button" (click)="closeWithRta(true)">Si</button>
-          <button type="button" (click)="closeWithRta(false)">No</button>
-        </div>
       </div>
     </div>
     <div class="flex flex-auto space-y-2 flex-col">
@@ -32,18 +28,6 @@
         <span class="flex space-x-2 text-left">
           <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
           <span>Labels</span>
-        </span>
-      </app-btn>
-      <app-btn typeBtn="button" color="light">
-        <span class="flex space-x-2 text-left">
-          <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
-          <span>Checklist</span>
-        </span>
-      </app-btn>
-      <app-btn typeBtn="button" color="light">
-        <span class="flex space-x-2 text-left">
-          <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
-          <span>Dates</span>
         </span>
       </app-btn>
     </div>

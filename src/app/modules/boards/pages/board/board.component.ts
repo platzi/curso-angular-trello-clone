@@ -58,10 +58,6 @@ export class BoardComponent {
     },
   ];
 
-  todos: ToDo[] = [];
-  doing: ToDo[] = [];
-  done: ToDo[] = [];
-
   constructor(private dialog: Dialog) {}
 
   drop(event: CdkDragDrop<ToDo[]>) {
@@ -97,7 +93,9 @@ export class BoardComponent {
       },
     });
     dialogRef.closed.subscribe((output) => {
-      console.log(output);
+      if (output) {
+        console.log(output);
+      }
     });
   }
 }

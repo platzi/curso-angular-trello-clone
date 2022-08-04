@@ -44,8 +44,4 @@ export class TodoDialogComponent {
   close() {
     this.dialogRef.close();
   }
-
-  closeWithRta(rta: boolean) {
-    this.dialogRef.close({ rta });
-  }
 }

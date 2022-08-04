@@ -20,7 +20,7 @@ export class MeService {
   }
 
   getMeBoards() {
-    return this.http.get<User>(`${this.apiUrl}/api/v1/me/boards`, {
+    return this.http.get(`${this.apiUrl}/api/v1/me/boards`, {
       context: checkToken(),
     });
   }
