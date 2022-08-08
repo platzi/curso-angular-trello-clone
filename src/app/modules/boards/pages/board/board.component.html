@@ -1,22 +1,22 @@
 <div class="w-full h-full bg-sky-600 px-4 pb-4">
   <div class="flex flex-col h-full">
     <div>
-      <h2 class="text-xl font-bold text-white my-4">Demo Board</h2>
+      <h2 class="text-xl font-bold text-white my-4">{{ board?.title }}</h2>
     </div>
     <div class="flex grow items-start w-full h-full overflow-x-scroll" cdkDropListGroup>
-      <div class="rounded bg-gray-200 w-72 p-2 mr-3 shrink-0" *ngFor="let column of columns">
+      <div class="rounded bg-gray-200 w-72 p-2 mr-3 shrink-0" *ngFor="let list of board?.lists">
         <div class="flex justify-between py-1">
-          <h3 class="text-sm font-bold ml-2">{{ column.title }}</h3>
+          <h3 class="text-sm font-bold ml-2">{{ list.title }}</h3>
         </div>
 
-        <div class="text-sm mt-2 min-h-[2.5rem]" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="column.todos">
+        <div class="text-sm mt-2 min-h-[2.5rem]" cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="list.cards">
           <div
-            (click)="openDialog(todo)"
-            *ngFor="let todo of column.todos"
+            (click)="openDialog(card)"
+            *ngFor="let card of list.cards"
             cdkDrag
             class="bg-white shadow p-2 rounded mt-2 border-b border-x-gray-300 cursor-pointer hover:bg-gray-400"
           >
-            {{ todo.title }}
+            {{ card.title }}
           </div>
         </div>
       </div>

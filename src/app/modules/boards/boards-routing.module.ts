@@ -10,7 +10,7 @@ const routes: Routes = [
     component: BoardsComponent
   },
   {
-    path: ':id',
+    path: ':boardId',
     component: BoardComponent
   },
 ];
