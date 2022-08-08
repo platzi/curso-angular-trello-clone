@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '@environments/environment';
 import { User } from '@models/user.model';
+import { Board } from '@models/board.model';
 import { checkToken } from '@interceptors/token.interceptor';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class MeService {
   }
 
   getMeBoards() {
-    return this.http.get(`${this.apiUrl}/api/v1/me/boards`, {
+    return this.http.get<Board[]>(`${this.apiUrl}/api/v1/me/boards`, {
       context: checkToken(),
     });
   }
