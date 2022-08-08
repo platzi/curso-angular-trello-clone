@@ -18,10 +18,4 @@ export class MeService {
       context: checkToken(),
     });
   }
-
-  getMeBoards() {
-    return this.http.get(`${this.apiUrl}/api/v1/me/boards`, {
-      context: checkToken(),
-    });
-  }
 }
