@@ -6,6 +6,7 @@ import { checkToken } from '@interceptors/token.interceptor';
 import { User } from '@models/user.model';
 import { Board } from '@models/board.model';
 import { Card } from '@models/card.model';
+import { Colors } from '@models/colors.model';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,15 @@ export class BoardsService {
     return this.http.get<Board>(`${this.apiUrl}/api/v1/boards/${id}`, {
       context: checkToken(),
     });
+  }
+
+  createBoard(title: string, backgroundColor: Colors) {
+    return this.http.post<Board>(`${this.apiUrl}/api/v1/boards`, {
+      title,
+      backgroundColor
+    }, {
+      context: checkToken(),
+    })
   }
 
   getPosition(cards: Card[], currentIndex: number) {
