@@ -35,4 +35,8 @@ export class NavbarComponent {
     this.router.navigate(['/login']);
   }
 
+  close(event: boolean) {
+    this.isOpenOverlayCreateBoard = event;
+  }
+
 }
