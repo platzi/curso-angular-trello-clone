@@ -60,6 +60,9 @@ export class BoardComponent implements OnInit {
         event.currentIndex
       );
     }
+    // after
+    const rta = this.boardsService.getPosition(event.container.data, event.currentIndex);
+    console.log(rta);
   }
 
   addColumn() {
