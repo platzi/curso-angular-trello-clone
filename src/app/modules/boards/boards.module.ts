@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
@@ -25,7 +26,8 @@ import { TodoDialogComponent } from './components/todo-dialog/todo-dialog.compon
     DragDropModule,
     CdkAccordionModule,
     DialogModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ]
 })
 export class BoardsModule { }
