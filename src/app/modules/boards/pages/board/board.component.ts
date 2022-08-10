@@ -15,6 +15,7 @@ import { CardsService } from '@services/cards.service';
 import { ListsService } from '@services/lists.service';
 import { Board } from '@models/board.model';
 import { List } from '@models/list.model';
+import { BACKGROUNDS } from '@models/colors.model';
 
 @Component({
   selector: 'app-board',
@@ -42,6 +43,7 @@ export class BoardComponent implements OnInit {
     validators: [Validators.required]
   });
   showListForm = false;
+  colorBackgrounds = BACKGROUNDS;
 
   constructor(
     private dialog: Dialog,
@@ -165,5 +167,13 @@ export class BoardComponent implements OnInit {
 
   closeCardForm(list: List) {
     list.showCardForm = false;
+  }
+
+  get colors() {
+    if (this.board) {
+      const classes = this.colorBackgrounds[this.board.backgroundColor];
+      return classes ? classes : {};
+    }
+    return {};
   }
 }
