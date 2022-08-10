@@ -92,3 +92,36 @@ export const BACKGROUNDS: ObjColors = {
     'bg-gray-600': true,
   },
 }
+
+export const NAVBAR_BACKGROUNDS: ObjColors = {
+  success: {
+    'bg-success-700': true,
+  },
+  primary: {
+    'bg-primary-700': true,
+  },
+  danger: {
+    'bg-danger-700': true,
+  },
+  light: {
+    'bg-gray-700': true,
+  },
+  sky: {
+    'bg-sky-700': true,
+  },
+  yellow: {
+    'bg-yellow-700': true,
+  },
+  green: {
+    'bg-green-700': true,
+  },
+  red: {
+    'bg-red-700': true,
+  },
+  violet: {
+    'bg-violet-700': true,
+  },
+  gray: {
+    'bg-gray-700': true,
+  },
+}
